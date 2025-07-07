@@ -1,0 +1,117 @@
+[mgr]
+show_hidden = true
+sort_by = "alphabetical"
+sort_dir_first = true
+
+[opener]
+archive = [
+    { run = 'unar "$@"', for = "unix" },
+]
+
+# Text editor using neovim
+edit = [
+    { run = 'nvim "$@"', block = true, desc = "Edit in Neovim", for = "unix" },
+]
+
+# Fallback for other file types
+open = [
+    { run = 'xdg-open "$@"', desc = "Open", for = "linux" },
+]
+
+# Image viewer
+view = [
+    { run = 'feh "$@"', orphan = true, desc = "View image", for = "unix" },
+    { run = 'xdg-open "$@"', desc = "Open", for = "linux" },
+]
+
+# Media player
+play = [
+    { run = 'mpv "$@"', orphan = true, desc = "Play", for = "unix" },
+]
+
+# PDF viewer
+pdf = [
+    { run = 'zathura "$@"', orphan = true, desc = "View PDF", for = "unix" },
+    { run = 'xdg-open "$@"', desc = "Open", for = "linux" },
+]
+
+[open]
+rules = [
+
+    { mime = "application/zip", use = "archive" },
+    { mime = "application/x-tar", use = "archive" },
+    { mime = "application/x-compressed-tar", use = "archive" },
+
+    # Text files - open with neovim
+    { mime = "text/*", use = "edit" },
+    { mime = "application/json", use = "edit" },
+    { mime = "application/x-shellscript", use = "edit" },
+    { mime = "application/x-wine-extension-ini", use = "edit" },
+    
+    # Configuration files by extension
+    { name = "*.txt", use = "edit" },
+    { name = "*.md", use = "edit" },
+    { name = "*.py", use = "edit" },
+    { name = "*.js", use = "edit" },
+    { name = "*.ts", use = "edit" },
+    { name = "*.html", use = "edit" },
+    { name = "*.css", use = "edit" },
+    { name = "*.json", use = "edit" },
+    { name = "*.toml", use = "edit" },
+    { name = "*.yaml", use = "edit" },
+    { name = "*.yml", use = "edit" },
+    { name = "*.xml", use = "edit" },
+    { name = "*.conf", use = "edit" },
+    { name = "*.config", use = "edit" },
+    { name = "*.cfg", use = "edit" },
+    { name = "*.ini", use = "edit" },
+    { name = "*.log", use = "edit" },
+    { name = "*.sh", use = "edit" },
+    { name = "*.bash", use = "edit" },
+    { name = "*.zsh", use = "edit" },
+    { name = "*.fish", use = "edit" },
+    
+    # Dotfiles and config files without extensions
+    { name = ".*rc", use = "edit" },
+    { name = ".*profile", use = "edit" },
+    { name = "Dockerfile*", use = "edit" },
+    { name = "Makefile*", use = "edit" },
+    { name = "README*", use = "edit" },
+    { name = "LICENSE*", use = "edit" },
+    
+    # Images
+    { mime = "image/*", use = "view" },
+    
+    # Videos and audio
+    { mime = "video/*", use = "play" },
+    { mime = "audio/*", use = "play" },
+    
+    # PDFs
+    { mime = "application/pdf", use = "pdf" },
+    
+    # Fallback for everything else
+    { name = "*", use = "open" },
+]
+
+[input]
+# Keybindings for input mode
+[input.keymap]
+[input.keymap.default]
+
+[select]
+# Keybindings for select mode  
+[select.keymap]
+[select.keymap.default]
+
+[tasks]
+# Task management settings
+micro_workers = 5
+macro_workers = 10
+bizarre_retry = 5
+
+[plugin]
+# Plugin settings can go here
+
+[log]
+# Enable logging for debugging
+enabled = true

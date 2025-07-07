@@ -1,0 +1,54 @@
+{
+    "wlr/workspaces": {
+        "max-length": 64,
+        "format": "{}",
+        "on-click": "activate"
+    },
+    "network": {
+        "format": "Wifi: {essid}",
+        "format-disconnected": "Wifi: Disconnected",
+        "on-click": "nm-applet",
+        "tooltip": false,
+        "interface": "wlp2s0"
+    },
+    "pulseaudio": {
+        "format": "Volume: {volume}%",
+        "format-muted": "Volume: Muted",
+        "on-click": "pavucontrol",
+        "tooltip": false
+    },
+    "battery": {
+        "format": "Battery: {capacity}%",
+        "format-charging": "Battery: {capacity}%",
+        "format-warning": "Battery: {capacity}% (Low)",
+        "tooltip": false
+    },
+    "custom/space": {
+        "format": " ",
+        "tooltip": false
+    },
+    "clock": {
+        "format": "{:%I:%M %p}",
+        "tooltip": true,
+        "tooltip-format": "{:%d %B, %Y on a %A}",
+        "interval": 60
+    },
+    "tray": {
+        "icon-size": 20,
+        "spacing": 16
+    },
+    "custom/power": {
+        "format": "Power",
+        "tooltip": true,
+        "tooltip-format": "Power menu (wlogout)",
+        "on-click": "wlogout"
+    },
+    "custom/spotify": {
+        "exec": "/usr/bin/python3 .config/waybar/mediaplayer.py --player spotify",
+        "format": "{}  ",
+        "return-type": "json",
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous"
+    }
+}

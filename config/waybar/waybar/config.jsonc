@@ -1,0 +1,23 @@
+{
+    "include": "~/.config/waybar/modules.json",
+    "layer": "top",
+    "position": "top",
+    "height": 33,
+    //"width": 1900,
+    "margin": "0 0 0 0",
+    "spacing": 0,
+    "modules-left": [
+	"tray",
+	"group/center"
+    ],
+    "modules-center": [
+	"custom/spotify"
+    ],
+    "modules-right": [
+	    "clock"
+    ],
+    "group/center": {
+        "orientation": "horizontal",
+        "modules": ["custom/power", "battery", "pulseaudio", "network"]
+    }
+}

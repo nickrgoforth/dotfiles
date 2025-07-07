@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openbox_menu>
+<!-- Note: for localization support of menu items "client-menu" has to be removed here -->
+<menu id="client-menu">
+  <item label="Minimize">
+    <action name="Iconify" />
+  </item>
+  <item label="Maximize">
+    <action name="ToggleMaximize" />
+  </item>
+  <item label="Fullscreen">
+    <action name="ToggleFullscreen" />
+  </item>
+  <item label="Roll Up/Down">
+    <action name="ToggleShade" />
+  </item>
+  <item label="Decorations">
+    <action name="ToggleDecorations" />
+  </item>
+  <item label="Always on Top">
+    <action name="ToggleAlwaysOnTop" />
+  </item>
+  <menu id="workspaces" label="Workspace">
+    <item label="Move Left">
+      <action name="SendToDesktop" to="left" />
+    </item>
+    <item label="Move Right">
+      <action name="SendToDesktop" to="right" />
+    </item>
+    <separator />
+    <item label="Always on Visible Workspace">
+      <action name="ToggleOmnipresent" />
+    </item>
+  </menu>
+  <item label="Close">
+    <action name="Close" />
+  </item>
+</menu>
+
+<menu id="root-menu">
+  <item label="firefox">
+    <action name="Execute" command="firefox" />
+  </item>
+  <item label="kitty">
+    <action name="Execute" command="kitty" />
+  </item>
+  
+  <!-- Application categories -->
+  <menu id="applications" label="apps">
+    <!-- Games category -->
+    <menu id="games" label="games">
+      <item label="psx">
+        <action name="Execute" command="duckstation-qt" />
+      </item>
+      <item label="gba">
+        <action name="Execute" command="mgba-qt" />
+      </item>
+      <item label="ps2">
+	<action name="Execute" command="~/Applications/pcsx2/pcsx2.AppImage" />
+      </item>
+    </menu>
+
+    <!-- Music category -->
+    <menu id="music" label="music">
+      <item label="spotify">
+        <action name="Execute" command="spotify" />
+      </item>
+      <item label="audacious">
+        <action name="Execute" command="audacious" />
+      </item>
+      <item label="nicotine">
+        <action name="Execute" command="nicotine" />
+      </item>
+    </menu>
+  </menu>
+
+  <item label="reconfigure">
+    <action name="Reconfigure" />
+  </item>
+</menu>
+
+<menu id="some-custom-menu">
+  <separator label="custom menu" />
+  <item label="reconfigure">
+    <action name="Reconfigure" />
+  </item>
+  <!-- Exit button removed -->
+</menu>
+</openbox_menu>

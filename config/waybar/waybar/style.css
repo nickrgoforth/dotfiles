@@ -1,0 +1,96 @@
+@import url("./colors.css");
+
+* {
+    font-family: "GoMono Nerd Font";
+    font-size: 10pt;
+}
+
+window#waybar {
+    color: @b5;
+    background-color: #232d23;  /* Solid background color */
+    border-radius: 0px;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+}
+
+#system {
+    background: transparent;
+    border: none;
+}
+
+#workspaces {
+    background: transparent;
+    border: none;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#workspaces button {
+    min-width: 14px;
+    padding: 0 7px;
+    color: @b2;
+    transition: color 0.3s ease;
+}
+
+#workspaces button.active {
+    color: @b5;
+}
+
+#workspaces button:hover {
+    color: @b3;
+    box-shadow: inherit;
+    text-shadow: inherit;
+    background: transparent;
+}
+
+#window,
+#wlr-workspaces {
+    background: transparent;
+}
+
+#tray {
+    padding-right: 10px;
+}
+
+#network {
+    padding-left: 14px;
+    padding-right: 14px;
+    color: @b5;
+}
+
+#pulseaudio {
+    padding-left: 14px;
+    padding-right: 14px;
+    color: @b5;
+}
+
+#clock {
+    color: @b5;
+    background: transparent;
+    border: none;
+    padding-right: 14px;
+    padding-left: 14px;
+}
+
+#custom-power {
+    background: transparent;
+    padding-right: 14px;
+    padding-left: 14px;
+    border-radius: 0px;
+    color: @b5;
+}
+
+#battery {
+    padding-left: 14px;
+    padding-right: 14px;
+    color: @b5;
+}
+
+#custom-spotify {
+    padding-left: 14px;
+    padding-right: 14px;
+    margin: 0;
+    background: transparent;
+    color: @b5;
+}

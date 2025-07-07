@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+<labwc_config>
+  <core>
+    <gap>10</gap>
+  </core>
+  <desktops number="9"/>
+  <keyboard>
+	<!-- Custom keybindings -->
+	<keybind key="W-m">
+		<action name="Execute">
+			<command>kitty -e rmpc</command>
+		</action>
+	</keybind>
+    <!-- Launch Kitty with Command+Q -->
+    <keybind key="W-q">
+      <action name="Execute" command="kitty"/>
+    </keybind>
+    <keybind key="W-d">
+      <action name="Execute" command="duckstation-qt"/>
+    </keybind>
+    <keybind key="W-f">
+      <action name="Execute" command="firefox"/>
+    </keybind>
+    <!-- Launch yazi with Command+E -->
+    <keybind key="W-e">
+      <action name="Execute">
+        <command>kitty -e yazi</command>
+      </action>
+    </keybind>
+    <!-- Close focused window with Command+Shift+X -->
+    <keybind key="W-S-x">
+      <action name="Close"/>
+    </keybind>
+    <!-- Place window on left half of screen with Command+Left -->
+    <keybind key="W-Left">
+      <action name="SnapToEdge" direction="left"/>
+    </keybind>
+    <!-- Place window on right half of screen with Command+Right -->
+    <keybind key="W-Right">
+      <action name="SnapToEdge" direction="right"/>
+    </keybind>
+    <!-- Maximize current window with Command+Up -->
+    <keybind key="W-Up">
+      <action name="ToggleMaximize"/>
+    </keybind>
+    <!-- Minimize window with Command+Down -->
+    <keybind key="W-Down">
+      <action name="Iconify"/>
+    </keybind>
+    <!-- Move window between displays -->
+    <!-- Move focused window to second display with Alt+Up -->
+    <keybind key="A-Up">
+      <action name="MoveToOutput" output="next"/>
+    </keybind>
+    <!-- Move focused window to first display with Alt+Down -->
+    <keybind key="A-Down">
+      <action name="MoveToOutput" output="prev"/>
+    </keybind>
+    <!-- Switch between workspaces 1-9 with Command+1 through Command+9 -->
+    <keybind key="W-1">
+      <action name="GoToDesktop" to="1"/>
+    </keybind>
+    <keybind key="W-2">
+      <action name="GoToDesktop" to="2"/>
+    </keybind>
+    <keybind key="W-3">
+      <action name="GoToDesktop" to="3"/>
+    </keybind>
+    <keybind key="W-4">
+      <action name="GoToDesktop" to="4"/>
+    </keybind>
+    <keybind key="W-5">
+      <action name="GoToDesktop" to="5"/>
+    </keybind>
+    <keybind key="W-6">
+      <action name="GoToDesktop" to="6"/>
+    </keybind>
+    <keybind key="W-7">
+      <action name="GoToDesktop" to="7"/>
+    </keybind>
+    <keybind key="W-8">
+      <action name="GoToDesktop" to="8"/>
+    </keybind>
+    <keybind key="W-9">
+      <action name="GoToDesktop" to="9"/>
+    </keybind>
+    <!-- Window focus movement -->
+    <!-- Alt+Tab to cycle to next window -->
+    <keybind key="A-Tab">
+      <action name="NextWindow"/>
+    </keybind>
+    <!-- Alt+Shift+Tab to cycle to previous window -->
+    <keybind key="A-S-Tab">
+      <action name="PreviousWindow"/>
+    </keybind>
+    <!-- Command+Tab as an alternative to Alt+Tab -->
+    <keybind key="W-Tab">
+      <action name="NextWindow"/>
+    </keybind>
+    <!-- Command+` (backtick/tilde) to cycle windows of same application -->
+    <keybind key="W-grave">
+      <action name="NextWindow" same_application="yes"/>
+    </keybind>
+    <!-- Command+j and Command+k for VIM-style window navigation -->
+    <keybind key="W-j">
+      <action name="NextWindow"/>
+    </keybind>
+    <keybind key="W-k">
+      <action name="PreviousWindow"/>
+    </keybind>
+    <!-- Alt+F4 to close window -->
+    <keybind key="A-F4">
+      <action name="Close"/>
+    </keybind>
+    <!-- Alt+F3 for application launcher (if you have bemenu) -->
+    <keybind key="A-F3">
+      <action name="Execute" command="bemenu-run"/>
+    </keybind>
+    <!-- Mac keyboard media keys -->
+    <!-- Volume control using pamixer -->
+    <!-- Volume Up (F12 on Mac) -->
+    <keybind key="XF86AudioRaiseVolume">
+      <action name="Execute" command="pamixer -i 5"/>
+    </keybind>
+    <!-- Volume Down (F11 on Mac) -->
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute" command="pamixer -d 5"/>
+    </keybind>
+    <!-- Mute (F10 on Mac) -->
+    <keybind key="XF86AudioMute">
+      <action name="Execute" command="pamixer -t"/>
+    </keybind>
+    <!-- Brightness control -->
+    <!-- Brightness Up (F2 on Mac) -->
+    <keybind key="XF86MonBrightnessUp">
+      <action name="Execute" command="brightnessctl set +5%"/>
+    </keybind>
+    <!-- Brightness Down (F1 on Mac) -->
+    <keybind key="XF86MonBrightnessDown">
+      <action name="Execute" command="brightnessctl set 5%-"/>
+    </keybind>
+    <!-- Additional media keys -->
+    <!-- Play/Pause (F8 on Mac) -->
+    <keybind key="XF86AudioPlay">
+      <action name="Execute" command="playerctl play-pause"/>
+    </keybind>
+    <!-- Next track (F9 on Mac) -->
+    <keybind key="XF86AudioNext">
+      <action name="Execute" command="playerctl next"/>
+    </keybind>
+    <!-- Previous track (F7 on Mac) -->
+    <keybind key="XF86AudioPrev">
+      <action name="Execute" command="playerctl previous"/>
+    </keybind>
+  </keyboard>
+  <!-- Basic theme settings -->
+  <theme>
+    <name>Prelude-Green</name>
+    <cornerRadius>0</cornerRadius>
+    <font>
+      <name>GoMono Nerd Font</name>
+      <size>10</size>
+    </font>
+    <dropShadows>no</dropShadows>
+  </theme>
+  <placement>
+    <policy>Cursor</policy>
+  </placement>
+  <libinput>
+    <device>
+      <naturalScroll/>
+    </device>
+  </libinput>
+</labwc_config>
